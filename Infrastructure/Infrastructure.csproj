@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Database\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="microsoft.aspnetcore.identity.entityframeworkcore" Version="8.0.4" />
+    <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="8.0.4" />
+  </ItemGroup>
+
+</Project>
