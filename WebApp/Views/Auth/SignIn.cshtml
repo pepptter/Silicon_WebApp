@@ -11,25 +11,26 @@
            </div>
        }
        <form method="post" asp-action="SignIn" asp-controller="Auth" asp-route-ReturnUrl="@ViewData["ReturnUrl"]" novalidate>
-           <h1>Welcome back</h1>
+           <h1>Welcome Back</h1>
            <p>Don't have an account yet? <a asp-action="SignUp" asp-controller="Auth">Sign up here</a></p>
             <div class="form-content">
-                <div id="form-email" class="input-group">
+                <div class="input-group">
                     <label asp-for="Email"></label>
                     <input asp-for="Email"/>
                 </div>
-                <div id="form-password" class="input-group">
+                <div class="input-group">
                     <label asp-for="Password"></label>
                     <input asp-for="Password"/>
                 </div>
-                <div id="form-checkbox" class="checkbox-group">
-                    <div class="input-group">
-                        <input asp-for="RememberMe" />
-                        <label asp-for="RememberMe"></label>
-                    </div>
+                <div class="remember-group">
+                    <input asp-for="RememberMe" id="remember-me-checkbox" />
+                    <label asp-for="RememberMe" for="remember-me-checkbox" class="checkbox-label"></label>
                 </div>
-                <div id="form-button">
-                    <button type="submit" class="btn btn-theme"><i class="fa-regular fa-arrow-left-to-bracket"></i>Sign In</button>
+                <div class="button-size">
+                    <button type="submit" class="btn-theme"><i class="fa-regular fa-arrow-left-to-bracket"></i>Sign In</button>
+                </div>
+                <div class="forgot-password">
+                    <a asp-action="ForgotPassword" asp-controller="Auth">Forgot Password?</a>
                 </div>
             </div>
 

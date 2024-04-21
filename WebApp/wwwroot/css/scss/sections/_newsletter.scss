@@ -1,0 +1,147 @@
+.newsletter-section {
+    background-color: $gray-100;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+            .header-part {
+                display: flex;
+                text-align: center;
+                align-items: center;
+
+
+                h1 {
+                    @include h3;
+
+                    @include md {
+                        margin-right: 15px;
+                    }
+
+                    @include lg {
+                        @include d6;
+                        margin-right: 20px;
+                    }
+                }
+            }
+
+            .newsletter-form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                fieldset {
+                    display: block;
+
+                    @include lg {
+                        display: grid;
+                        grid-template-columns: 1fr 3fr;
+                        grid-template-rows: auto;
+                        grid-template-areas:
+                            "header header header header"
+                            "legend checkbox checkbox checkbox"
+                            "inputgroup inputgroup inputgroup inputgroup"
+                            "inputgroup inputgroup inputgroup inputgroup";
+
+                        legend {
+                            max-width: 60%;
+                        }
+                        .header-part{
+                            grid-area: header;
+                        }
+
+                    }
+                }
+
+                .grid-legend {
+                    grid-area: legend;
+                }
+
+                legend {
+                    @include h5;
+                    color: $gray-900;
+                }
+
+                label {
+                    @include text-lg;
+                    color: $gray-700;
+
+                    @include lg {
+                        @include text-s;
+                    }
+                }
+
+                .checkboxes {
+                    grid-area: checkbox;
+                    display: grid;                    
+                    gap: 10px;
+                }
+
+                @include md {
+                    grid-template-columns: repeat(2, 1fr);
+
+                    .checkboxes {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
+                @include lg {
+                    grid-template-columns: 2fr 1fr;
+
+                    .checkboxes {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                }
+
+                .input-group {
+                    grid-area: inputgroup;
+                    flex-direction: column;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                    gap: 15px;
+
+                    @include lg {
+                        display: grid;
+                        grid-template-columns: 1fr auto;
+                    }
+
+                    .input-icon {
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                        border: 1px solid $gray-400;
+                        border-radius: 8px !important;
+
+                        i {
+                            position: absolute;
+                            left: 10px;
+                            color: $gray-500;
+                        }
+
+                        input {
+                            flex: 1;
+                            padding: 10px 10px 10px 30px;
+                            border: none;
+                            outline: none;
+
+                            &::placeholder {
+                                color: $gray-400;
+                            }
+                        }
+
+                    }
+                }
+
+                .btn-theme-s {
+                    border-radius: 8px !important;
+
+                    @include md {
+                        margin-left: 15px;
+                    }
+                }
+
+        }
+    }
+}

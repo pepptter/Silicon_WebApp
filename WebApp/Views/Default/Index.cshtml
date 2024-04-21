@@ -1,0 +1,25 @@
+﻿@model DefaultIndexViewModel
+@{
+    ViewData["Title"] = "Home";
+}
+<div id="showcase">
+    <partial name="~/Views/Default/Sections/_ShowcasePartial.cshtml"  />
+</div>
+<div id="features">
+    <partial name="~/Views/Default/Sections/_FeaturesPartial.cshtml" model="@Model.Features" />
+</div>
+<div>
+    <partial name="~/Views/Default/Sections/_SwitchBetweenModesSection.cshtml" />
+</div>
+<div>
+    <partial name="~/Views/Default/Sections/_ManageYourWorkSection.cshtml" />
+</div>
+<div>
+    <partial name="~/Views/Default/Sections/_DownloadSection.cshtml" />
+</div>
+<div>
+    <partial name="~/Views/Default/Sections/_IntegrateSection.cshtml" model="@Model.Integrate" />
+</div>
+<div>
+    <partial name="~/Views/Default/Sections/_NewsletterSection.cshtml" model="@Model.Subscribe"/>
+</div>

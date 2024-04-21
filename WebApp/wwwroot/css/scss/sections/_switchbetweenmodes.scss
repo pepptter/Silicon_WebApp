@@ -1,0 +1,77 @@
+.switchbetweenmodes-section {
+    .darkandlight {
+        background: linear-gradient(to right, $gray-900 50%, white 50%);
+        padding: 40px 0 120px 0; ;
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .text-box {
+                margin: 70px 0 70px 0;
+                display: flex;
+                width: 100%;
+                align-items: center;
+
+                .light-text,
+                .dark-text {
+                    flex: 0 0 50%;
+                    display: flex;
+                }
+
+                h1{
+                    margin: 0;
+                }
+            }
+            .light-text {
+                justify-content: end;
+                padding-right: 4px;
+
+                h1{
+
+                    @include text-xl;
+                    color: white;
+                }
+                @include lg{
+                    padding-right: 8px;
+
+                    h1 {
+                        @include h1;
+                        color: white;
+                    }
+                }
+            }
+              }
+            .dark-text {
+                justify-content: start;
+                padding-left: 2px;
+                h1 {
+                    @include text-xl;
+                    color: $gray-900;
+                }
+                @include lg{
+                    padding-left: 4px;
+
+                    h1 {
+                        @include h1;
+
+                    }
+                }
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                width: 90%;
+
+                @include md {
+                    width: 100%;
+                }
+            }
+
+    }
+}

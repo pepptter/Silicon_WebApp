@@ -6,7 +6,7 @@ public class UserEntity : IdentityUser
 {
     public string FirstName { get; set; } = null!;
     public string LastName { get; set; } = null!;
-    public string? ProfilePicture { get; set; } = "avatar.jpg";
+    public string? ProfilePicture { get; set; } = "avatar.svg";
     public string? Bio { get; set; }
 
     public int? AddressId { get; set; }

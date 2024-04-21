@@ -6,6 +6,12 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddHttpClient("CourseClient", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7253/api/Courses");
+});
+builder.Services.AddScoped<ICourseService, CourseService>();
+
 builder.Services.AddDbContext<ApplicationContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("WebApp_Database")));
 builder.Services.AddIdentity<UserEntity, IdentityRole>(x =>
 {
@@ -31,6 +37,6 @@ app.UseRouting();
 app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Default}/{action=Home}/{id?}");
+    pattern: "{controller=Default}/{action=Index}/{id?}");
 
 app.Run();

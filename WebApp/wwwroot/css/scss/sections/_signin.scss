@@ -1,0 +1,119 @@
+﻿.signin {
+    margin-top: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        display: flex;
+        justify-content: center;
+
+        form {
+            h1 {
+                @include h1;
+                font-weight: 800;
+                color: $gray-900;
+            }
+
+            .form-content {
+                display: flex;
+                flex-direction: column;
+                width: 530px;
+            }
+
+            .input-group {
+                flex-direction: column;
+                margin-top: 15px;
+                margin-bottom: 15px;
+
+                label {
+                    @include text-m;
+                    font-weight: 800;
+                    color: $gray-900;
+                }
+
+                input {
+                    flex: 1;
+                    padding: 10px 10px 10px 12px;
+                    border: 1px solid $gray-400;
+                    border-radius: 6px !important;
+                    outline: none;
+                    @include text-m;
+
+                    &::placeholder {
+                        color: $gray-500;
+                    }
+                }
+            }
+
+            .remember-group {
+                display: flex;
+                margin-top: 5px;
+                margin-bottom: 15px;
+                gap: 5px;
+                align-items: center;
+
+                input[type="checkbox"] {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    width: 20px;
+                    height: 20px;
+                    border: 2px solid #ccc;
+                    border-radius: 3px;
+                    outline: none;
+                    cursor: pointer;
+                    margin-right: 10px;
+                    position: relative;
+                }
+
+                input[type="checkbox"]:checked {
+                    background-color: $theme;
+                    border-color: $theme;
+                }
+
+                input[type="checkbox"]:checked::before {
+                    content: "\2713";
+                    font-size: 14px;
+                    color: #fff;
+                    text-align: center;
+                    line-height: 20px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                label {
+                    @include text-m;
+                }
+            }
+
+
+
+            .button-size {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 15px;
+                .btn-theme {
+                    @include text-m;
+                    color: white;
+                    font-weight:500;
+                    width: 100%;
+                }
+            }
+
+            .forgot-password {
+                text-align: center;
+                a {
+                    color: $theme;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

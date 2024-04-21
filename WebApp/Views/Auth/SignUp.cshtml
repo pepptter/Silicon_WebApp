@@ -40,15 +40,15 @@
                     <input asp-for="ConfirmPassword" />
                     <span asp-validation-for="ConfirmPassword"></span>
                 </div>
-                <div id="form-checkbox" class="checkbox-group">
-                    <div class="input-group">
-                        <input asp-for="TermsAccepted" />
-                        <label asp-for="TermsAccepted"></label>
+                <div id="form-checkbox" >
+                    <div class="checkbox-group">
+                        <input asp-for="TermsAccepted" id="terms-accepted-checkbox" />
+                        <label asp-for="TermsAccepted" for="terms-accepted-checkbox" class="checkbox-label"></label>
                     </div>
                     <span asp-validation-for="TermsAccepted"></span>
                 </div>
                 <div id="form-button">
-                    <button type="submit" class="btn btn-theme"><i class="fa-regular fa-arrow-left-to-bracket"></i>Sign Up</button>
+                    <button type="submit" class="btn-theme"><i class="fa-regular fa-arrow-left-to-bracket"></i>Sign Up</button>
                 </div>
             </div>
 

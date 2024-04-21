@@ -1,0 +1,108 @@
+﻿@model CourseIndexViewModel
+@{
+    ViewData["Title"] = "Courses";
+}
+<section class="courses-section">
+    <div class="container">
+        <div class="courses-section-header">
+            <div class="nav-location">
+                <p><a asp-controller="Default" asp-action="Index"><i class="fa-solid fa-house"></i> Home </a>>><a asp-controller="Courses" asp-action="Index" class="a-margin"> Courses</a></p>
+            </div>
+            <div class="courses-categories-search">
+                <div class="heading">
+                    <h1>Courses</h1>
+                </div>
+                <div class="categories-and-search">
+                    <div class="category-group">
+                        <select class="category-dropdown">
+                            <option value="">All categories</option>
+                            <option value="">Category 1</option>
+                            <option value="">Category 2</option>
+                            <option value="">Category 3</option>
+                        </select>
+                        <div class="category-search">
+                            <input type="text" placeholder="Search courses">
+                            <button type="submit" class="search-button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="courses-main">
+            <div class="courses-grid">
+                @if (Model.Courses != null)
+                {
+                    @foreach (var course in Model.Courses)
+                    {
+                        <div class="course">
+                            <div class="bookmarker">
+                                <a href="#"><img src="images/bookmark-button.svg" alt=""></a>
+                            </div>
+                            @if (course.IsBestseller)
+                            {
+                                <div class="best-seller">
+                                    <p>Best Seller</p>
+                                </div>
+                            }
+                            <img src="~/images/@course.ImageUrl" alt="@course.Title">
+                            <div class="course-texts">
+                                <h5>@course.Title</h5>
+                                <p class="author-font">
+                                    By
+                                    @foreach (var author in course.Authors)
+                                    {
+                                        <span>@author.Name</span>
+                                        if (author != course.Authors.Last())
+                                        {
+                                            <span>,</span>
+                                        }
+                                    }
+                                </p>
+                                <div class="prices">
+                                    @if (!string.IsNullOrEmpty(course.DiscountPrice))
+                                    {
+                                        <p class="price-font sale-font">@course.DiscountPrice <span class="sale-span">@course.Price</span></p>
+                                    }
+                                    else
+                                    {
+                                        <p class="price-font">@course.Price</p>
+                                    }
+                                </div>
+                                <div class="length-rating">
+                                    <p><i class="fa-regular fa-clock"></i>@course.Hours</p>
+                                    <p><i class="fa-regular fa-thumbs-up"></i>@course.LikesInPercent @course.LikesInNumbers</p>
+                                </div> 
+                            </div> 
+                        </div> 
+                    }
+                }
+            </div>
+            <div class="courses-pagination">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#" aria-label="Previous">&laquo;</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#" aria-label="Next">&raquo;</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="courses-section-footer">
+            <img src="images/illustration.svg" alt="">
+            <div class="texts">
+                <h4>Ready to get started?</h4>
+                <h1>Take Your <span>Skills</span> to the Next Level</h1>
+                <div class="button-flex">
+                    <a class="btn-theme-s" asp-controller="Jobs" asp-action="WorkWithUs">
+                        Work with us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

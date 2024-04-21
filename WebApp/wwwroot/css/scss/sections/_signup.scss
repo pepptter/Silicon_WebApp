@@ -1,0 +1,141 @@
+﻿.signup {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        form {
+            h1 {
+                @include h1;
+                font-weight: 800;
+                color: $gray-900;
+            }
+
+
+            .form-content {
+                width: 520px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 15px;
+                grid-template-areas:
+                    "firstname lastname" "email email" "password password" "confirm confirm" "terms terms" "button button";
+
+                .input-group {
+                    flex-direction: column;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+
+                    label {
+                        @include text-m;
+                        font-weight: 800;
+                        color: $gray-900;
+                    }
+
+                    input {
+                        flex: 1;
+                        padding: 10px 10px 10px 12px;
+                        border: 1px solid $gray-400;
+                        border-radius: 6px !important;
+                        outline: none;
+                        @include text-m;
+
+                        &::placeholder {
+                            color: $gray-500;
+                        }
+                    }
+                }
+
+                .checkbox-group {
+                    display: flex;
+                    align-items: center;
+
+                    input {
+                        margin-right: 10px;
+                    }
+                }
+
+                #form-firstname {
+                    grid-area: firstname;
+                }
+
+                #form-lastname {
+                    grid-area: lastname;
+                }
+
+                #form-email {
+                    grid-area: email;
+                }
+
+                #form-password {
+                    grid-area: password;
+                }
+
+                #form-confirmpassword {
+                    grid-area: confirm;
+                }
+
+                #form-checkbox {
+                    grid-area: terms;
+                    display: flex;
+                    align-items: center;
+
+                    .checkbox-group {
+                        display: flex;
+                        margin-top: 5px;
+                        margin-bottom: 15px;
+                        gap: 5px;
+                        align-items: center;
+
+                        input[type="checkbox"] {
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            appearance: none;
+                            width: 20px;
+                            height: 20px;
+                            border: 2px solid #ccc;
+                            border-radius: 3px;
+                            outline: none;
+                            cursor: pointer;
+                            margin-right: 10px;
+                            position: relative;
+                        }
+
+                        input[type="checkbox"]:checked {
+                            background-color: $theme;
+                            border-color: $theme;
+                        }
+
+                        input[type="checkbox"]:checked::before {
+                            content: "\2713";
+                            font-size: 14px;
+                            color: #fff;
+                            text-align: center;
+                            line-height: 20px;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+
+                        label {
+                            @include text-m;
+                        }
+                    }
+                }
+
+                #form-button {
+                    grid-area: button;
+
+                    .btn-theme {
+                        @include text-m;
+                        color: white;
+                        font-weight: 500;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,505 @@
+.single-course-section {
+    a {
+        @include text-m;
+    }
+
+    .course-showcase {
+        .background-image {
+            @include lg {
+                height: 677px;
+                display: block;
+                background-image: url('/images/fullstack-web-developer-bg.svg');
+                background-position: center;
+            }
+
+            .container {
+                padding-bottom: 40px;
+                display: flex;
+                flex-direction: column;
+                background-color: $gray-200;
+
+                @include lg {
+                    padding-bottom: 0px;
+                    background-color: transparent;
+                }
+
+                img {
+                    max-width: 100%;
+                    border-radius: 8px;
+                    margin-bottom: 10px;
+
+                    @include lg {
+                        display: none;
+                    }
+                }
+
+                .nav-location {
+                    border-bottom: 1px solid $gray-400;
+                    margin-bottom: 15px;
+
+                    @include lg {
+                        border-bottom: none;
+                    }
+
+                    a,
+                    p {
+                        color: $gray-800;
+                        margin-right: 10px;
+                        font-size: 14px !important;
+
+                        @include md {
+                            font-size: 16px !important;
+                        }
+
+                        i {
+                            margin-right: 5px;
+                        }
+
+                        @include lg {
+                            margin-top: 30px;
+                            color: white;
+                        }
+                    }
+
+                    p {
+                        @include md {
+                            display: block;
+                        }
+                    }
+
+                    .a-margin {
+                        margin-left: 10px;
+                    }
+                }
+
+                .course-info-box {
+                    text-align: center;
+
+                    @include lg {
+                        text-align: left;
+                    }
+
+                    .categories {
+                        display: flex;
+                        margin: 10px 25px 10px 25px;
+                        gap: 10px;
+
+                        @include lg {
+                            margin: 0px;
+                            margin-top: 45px;
+                            margin-bottom: 15px;
+                            gap: 20px;
+                        }
+
+                        p {
+                            @include text-s;
+                            font-weight: 300;
+                            color: white;
+                        }
+
+                        .best-seller {
+                            text-align: center;
+                            background-color: $success;
+                            width: 86px;
+                            height: 22px;
+                            border-radius: 8px;
+                        }
+
+                        .digital {
+                            text-align: center;
+                            background-color: $gray-800;
+                            width: 60px;
+                            height: 22px;
+                            border-radius: 6px;
+
+                            p {
+                                border-radius: 6px;
+                                font-weight: 600;
+
+                                @include lg {
+                                    background-color: $gray-100;
+                                    color: $gray-800;
+                                }
+                            }
+                        }
+                    }
+
+                    h1 {
+                        @include h3;
+
+                        @include lg {
+                            @include h1;
+                            margin-bottom: 10px;
+                        }
+                    }
+
+                    h6 {
+                        @include text-lg;
+                        font-weight: 400;
+                        opacity: 0.7;
+                    }
+
+                    @include lg {
+
+                        h1,
+                        p,
+                        i {
+                            color: white;
+                        }
+
+                        h6 {
+                            @include text-lg;
+                            color: white;
+                            font-weight: 400;
+                            opacity: 0.7;
+                            margin-bottom: 50px;
+                        }
+                    }
+
+                    .rating-likes-length {
+                        display: grid;
+                        grid-template-columns: auto auto;
+                        column-gap: 15px;
+                        justify-content: center;
+                        text-align: center;
+
+                        @include lg {
+                            display: flex;
+                            justify-content: left;
+                            @include text-m;
+                            color: white;
+
+                            p {
+                                opacity: 0.7;
+                            }
+                        }
+
+                        .rating-stars {
+                            i {
+                                color: $warning;
+                            }
+
+                            .fa-regular {
+                                color: $gray-800;
+
+                                @include lg {
+                                    color: $gray-400;
+                                }
+
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .creator {
+                display: flex;
+                justify-content: center;
+
+                @include lg {
+                    margin-top: 150px;
+                    justify-content: left;
+
+                    img {
+                        display: block;
+                        width: 60px;
+                        height: auto;
+                    }
+                }
+
+                .texts {
+                    margin-left: 25px;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: left;
+
+
+
+                    .created-by {
+                        margin: 0;
+
+                        p {
+                            font-size: 16px;
+                            font-weight: 800;
+                        }
+                    }
+
+                    .author-name {
+                        p {
+                            font-size: 16px;
+                            font-weight: 600;
+                            opacity: 0.85;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    .container {
+        margin-top: 30px;
+        @include lg{
+            margin-top: 95px;
+        }
+
+
+        .course-description {
+            h1{
+                text-align: center;
+                @include h2;
+            }
+            i{
+                margin-right: 7px;
+            }
+
+            display: flex;
+            flex-direction: column;
+            @include md{
+                display: grid;
+                grid-template-columns: 5fr 2fr;
+                grid-template-areas:"desc join"
+                                    "learn learn";
+            }
+
+            .description-learn {
+                @include shadow-m;
+                border: 1px solid $gray-300;
+                border-radius: 6px;
+                padding: 10px 10px;
+                display: flex;
+                flex-direction: column;
+                @include md{
+                    border: none;
+                    box-shadow: none;
+                    margin-right: 25px;
+                }
+                @include lg{
+                    h1{
+                    text-align: left;
+                    }
+                }
+                .description-text {
+                    grid-area: desc;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    border-bottom: 1px solid $gray-300;
+                    @include md{
+                        border: none;
+                        box-shadow: none;
+                        text-align: left;
+                    }
+                }
+                .learn-text{
+                    padding-top: 10px;
+                    h3{
+                        text-align: center;
+                    }
+                    @include md{
+                        grid-area: learn;
+                        margin-right: 40px;
+                    }
+                    @include lg{
+                        h3{
+                            text-align: left;
+                        }
+                        p{
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+            .join-course{
+                display: flex;
+                flex-direction: column;
+                @include shadow-m;
+                border: 1px solid $gray-300;
+                border-radius: 6px;
+                padding: 40px;
+                margin-top: 20px;
+                @include md{
+                    grid-area: join;
+                    justify-content: space-around;
+                    padding: 20px;
+                }
+                @include lg{
+                    padding: 20px 40px;
+                }
+                .paras{
+                    p{
+                        margin-bottom: 5px;
+                    }
+                }
+                .price{
+                    display:flex;
+                    align-items: center;
+                    gap: 10px;
+                    h6{
+                        color: $gray-600;
+                        text-decoration: line-through;
+                    }
+                }
+                .btn-theme-s{
+                    @include text-m;
+                    color: white;
+                    font-weight: 600;
+                    @include md{
+                        width: 200px;
+                    }
+                }
+            }
+        }
+        .program-details{
+            margin-top: 50px;
+            h1{
+                text-align: center;
+                margin-bottom: 40px;
+                @include lg{
+                    text-align: left;
+                }
+            }
+            .details-list {
+                padding: 0;
+
+                list-style: none;
+
+                .detail-item {
+                  display: flex;
+                  align-items: flex-start;
+                  margin-bottom: 50px;
+
+                  .detail-number {
+                    min-width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    background-color: white;
+                    border: 12px solid $gray-100;
+                    color: $gray-900;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 10px;
+                    font-weight: bold;
+                    font-size: 20px;
+                  }
+
+                }
+              }
+
+        }
+        .author-showcase{
+            background-color: $gray-900;
+            background-image: url('/images/pattern.svg');
+            border-radius: 10px;
+            display:flex;
+            flex-direction: column;
+            @include lg{
+                border-radius: 0;
+                flex-direction: row;
+                margin-bottom: 50px;
+            }
+
+            .author-image{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    border-radius: 10px;
+                    max-width: 80%;
+                    margin: 30px 0 10px 0;
+                    @include lg{
+                        margin: 0;
+                        max-width: 100%;
+                        height: 568px;
+                        border-radius: 0;
+                    }
+                }
+
+            }
+            .author-info{
+                display: flex;
+                margin: 20px;
+                @include lg{
+                    margin: 0;
+                }
+                .texts{
+                    text-align: center;
+                    @include lg{
+                        margin-left: 120px;
+                        margin-top: 100px;
+                        max-width: 526px;
+                        justify-content: right;
+                        align-items: center;
+                        text-align: left;
+                    }
+
+                    h1{
+                        color: white;
+                    }
+                    h6{
+                        @include text-xl;
+                        opacity: 0.5;
+                        color: white;
+                    }
+                    p{
+                        color: white;
+                        opacity: 0.7;
+                    }
+
+                    .sub-follow{
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 15px;
+                        margin-bottom: 30px;
+                        @include md{
+                            flex-direction: row;
+                        }
+                        @include lg{
+                            justify-content: left;
+                            margin-top: 40px;
+                            margin-bottom: 0;
+                            gap: 24px;
+                        }
+
+                        p{
+                            margin: 0;
+                        }
+                        i{
+                            margin-left: 5px;
+                        }
+                        .sub{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+
+                            height: 44px;
+                            width: 180px;
+                            background-color: $danger;
+                            border-radius: 10px;
+
+                        }
+                        .follow{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            height: 44px;
+                            width: 180px;
+                            background-color: $info;
+                            border-radius: 10px;
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+.downloadourapp-section{
+    background-color: $gray-100;
+    padding: 7px 0;
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        @include md{
+            flex-direction: row;
+        }
+        img{
+            max-width: 100%;
+        }
+        padding: 53px 0;
+        background-color: $gray-200;
+        .text-and-buttons-box{
+            margin-top: 30px;
+            p{
+                margin-bottom: 0px;
+            }
+            h2{
+                margin-bottom: 0;
+            }
+            .app-image{
+                margin-top: 10px;
+            }
+            .app-store{
+                padding-bottom: 25px;
+                border-bottom: 1px solid $gray-400;
+                @include md{
+                    border-bottom: 0;
+                }
+
+            }
+            .google-play{
+                padding-top: 25px;
+            }
+            @include md{
+                margin-top: 0;
+                h1{
+                    @include h2;
+                }
+                h2{
+                    @include h4;
+                }
+            }
+
+            @include lg{
+                margin-left: 100px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+
+                h1{
+                    text-align: left;
+                    width: 416px;
+                    @include h1;
+                }
+
+                .app-formating{
+                    .app-store-stars{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                        justify-content: left;
+                        .stars{
+                            display:flex;
+                            flex-direction: row;
+                            color: $warning;
+                            width:14px;
+                        }
+                    }
+                }
+                .rating-download{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 60px;
+                    .app-image{
+                        flex-direction: row;
+                    }
+
+                }
+            }
+        }
+    }
+}

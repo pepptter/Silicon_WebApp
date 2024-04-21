@@ -1,0 +1,48 @@
+﻿@model SubscribeViewModel
+<section class="newsletter-section" id="newsletter">
+    <div class="container">
+        <form class="newsletter-form" method="post" asp-action="Subscribe" asp-controller="Default">
+            <fieldset>
+                <div class="header-part">
+                    <h1>Don't Want to Miss Anything?</h1>
+                    <div class="header-image">
+                        <img src="images/arrows.svg" alt="" />
+                    </div>
+                </div>
+                <legend class="grid-legend">Sign up for Newsletters</legend>
+                <div class="checkboxes">
+                    <label for="daily-newsletter">
+                        <input type="checkbox" id="daily-newsletter" name="DailyNewsletter" asp-for="DailyNewsletter"> Daily Newsletter
+                    </label>
+                    <label for="advertising-updates">
+                        <input type="checkbox" id="advertising-updates" name="AdvertisingUpdates" asp-for="AdvertisingUpdates"> Advertising Updates
+                    </label>
+                    <label for="week-in-review">
+                        <input type="checkbox" id="week-in-review" name="WeekInReview" asp-for="WeekInReview"> Week in Review
+                    </label>
+                    <label for="event-updates">
+                        <input type="checkbox" id="event-updates" name="EventUpdates" asp-for="EventUpdates"> Event Updates
+                    </label>
+                    <label for="startups-weekly">
+                        <input type="checkbox" id="startups-weekly" name="StartupsWeekly" asp-for="StartupsWeekly"> Startups Weekly
+                    </label>
+                    <label for="podcasts">
+                        <input type="checkbox" id="podcasts" name="Podcasts" asp-for="Podcasts"> Podcasts
+                    </label>
+                </div>
+                <div class="input-group">
+                    <div class="input-icon">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input asp-for="Email">
+                    </div>
+                    <button type="submit" class="btn-theme-s">Subscribe*</button>
+                    <div>
+                        <p>* Yes, I agree to the  <a href="#">terms</a> and <a href="#">privacy policy.</a></p>
+                    </div>
+                </div>
+                @TempData["StatusMessage"]
+
+            </fieldset>
+        </form>
+    </div>
+</section>

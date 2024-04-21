@@ -1,0 +1,93 @@
+header {
+    padding: 15px 0;
+
+    .container {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "logo mobile";
+        gap: 40px;
+
+
+        a {
+            @include text-m;
+        }
+
+        @include md {
+            grid-template-columns: auto 1fr auto;
+            grid-template-areas: "logo menu buttons ";
+        }
+
+        @include lg {
+            grid-template-columns: auto 1fr auto auto;
+            grid-template-areas: "logo menu switch buttons";
+        }
+
+        .logo {
+            grid-area: logo;
+        }
+
+        .menu {
+            grid-area: menu;
+            display: none;
+
+
+            @include md {
+                display: block;
+            }
+
+            nav {
+                display: flex;
+                gap: 25px;
+            }
+        }
+
+        .btn-switch {
+            grid-area: switch;
+            display: none;
+
+            @include lg {
+                display: block;
+            }
+        }
+
+        .account-buttons {
+            grid-area: buttons;
+            display: none;
+            gap: 15px;
+
+            .profile-picture {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+                     
+            .btn-theme {
+                color: white;
+            }
+
+            @include md {
+                display: flex;
+            }
+        }
+
+        .account-image {
+            grid-area: buttons;
+            display: none;
+
+            @include md {
+                display: block;
+            }
+        }
+
+        .btn-mobile {
+            grid-area: mobile;
+            display: flex;
+
+            @include md {
+                display: none;
+            }
+        }
+    }
+}

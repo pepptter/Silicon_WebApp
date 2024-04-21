@@ -1,0 +1,30 @@
+footer {
+    padding: 60px 0 40px 0;
+
+    @include text-m;
+    color: $gray-600;
+
+    .container {
+        text-align: center;
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            i{
+                color: $gray-800;
+            }
+            .social-box{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                width:45px;
+                height: 45px;
+                background-color: $gray-200;
+                border-radius: 5px;
+            }
+        }
+    }
+}

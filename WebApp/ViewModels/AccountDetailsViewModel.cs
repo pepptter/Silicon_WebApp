@@ -17,7 +17,7 @@ public class AccountBasicInfo
     [Required]
     [Display(Name = "Last name", Prompt = "Enter your last name")]
     public string LastName { get; set; } = null!;
-
+    
     [Required]
     [Display(Name = "E-mail address", Prompt = "Enter your e-mail address")]
     [DataType(DataType.EmailAddress)]
