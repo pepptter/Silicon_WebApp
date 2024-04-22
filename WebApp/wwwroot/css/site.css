@@ -2277,121 +2277,143 @@ footer .container .social-media .social-box {
   gap: 15px;
   padding: 50px 0;
 }
-.account-details .container aside {
-  width: 250px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .account-details .container .content {
-  flex-grow: 1;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.account-details .container .content form {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.account-details .container .content form h5 {
-  margin-top: 0;
-  color: #333;
-}
-.account-details .container .content form .input-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-.account-details .container .content form .input-group label {
-  margin-bottom: 5px;
-  color: #666;
-}
-.account-details .container .content form .input-group input,
-.account-details .container .content form .input-group textarea {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 10px;
-  font-size: 14px;
-}
-.account-details .container .content form .input-group input:focus,
-.account-details .container .content form .input-group textarea:focus {
-  border-color: #007bff;
-}
-.account-details .container .content form .input-group span {
-  color: red;
-  font-size: 12px;
-}
-.account-details .container .content form .form-button {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-}
-.account-details .container .content form .form-button .btn {
-  padding: 10px 20px;
-  border-radius: 4px;
-  text-align: center;
-  cursor: pointer;
-  font-weight: bold;
-}
-.account-details .container .content form .form-button .btn-gray {
-  background-color: #ccc;
-  color: #333;
-}
-.account-details .container .content form .form-button .btn-theme {
-  background-color: #007bff;
-  color: #fff;
-}
-
-.account-profile {
-  width: 300px;
-  position: relative;
-}
-.account-profile .profile-image {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 10px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-.account-profile .profile-image img {
+  margin-left: 120px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
-.account-profile .upload-button form {
-  position: absolute;
-  top: 75px;
-  left: 75px;
-  border: none;
-  padding: 0;
-  display: block;
-  width: 0;
-  height: 0;
+.account-details .container .content h2 {
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: #0B0F19;
+  font-size: 32px !important;
+  font-weight: 800;
+  color: #0B0F19;
 }
-.account-profile .upload-button .btn {
-  background-color: white;
-  border: 1px solid #E2E5F1;
-  color: #33354D;
-  font-size: 12px;
-  border-radius: 50%;
-  padding: 7px;
-  cursor: pointer;
+.account-details .container .content h5 {
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: #0B0F19;
+  font-size: 20px !important;
+  color: #6366F1;
 }
-.account-profile .upload-button .btn i {
-  color: black;
+.account-details .container .content label {
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px !important;
+  font-weight: 800;
+  color: #0B0F19;
 }
-.account-profile .profile-info h3.displayname {
-  margin: 0;
-  color: #333;
+.account-details .container .content input {
+  padding: 10px 10px 10px 12px;
+  border: 1px solid #D4D7E5;
+  border-radius: 6px !important;
+  outline: none;
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px !important;
+  color: #565973;
 }
-.account-profile .profile-info p {
-  color: #666;
-  font-size: 14px;
+.account-details .container .content input::placeholder {
+  color: #B4B7C9;
+}
+.account-details .container .content textarea {
+  padding: 10px 10px 10px 12px;
+  border: 1px solid #D4D7E5;
+  border-radius: 6px !important;
+  outline: none;
+  color: #565973;
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px !important;
+}
+.account-details .container .content textarea::placeholder {
+  color: #B4B7C9;
+}
+.account-details .container .content .basic-info {
+  border-bottom: 1px solid #E2E5F1;
+  padding-bottom: 30px;
+}
+.account-details .container .content .basic-info form .form-content {
+  display: grid;
+  grid-column-gap: 22px;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "firstname lastname" "email phone" "bio bio" "buttons buttons";
+}
+.account-details .container .content .basic-info form .form-content .input-group input {
+  width: 100%;
+}
+.account-details .container .content .basic-info form .form-content #form-firstname {
+  grid-area: firstname;
+}
+.account-details .container .content .basic-info form .form-content #form-lastname {
+  grid-area: lastname;
+}
+.account-details .container .content .basic-info form .form-content #form-email {
+  grid-area: email;
+}
+.account-details .container .content .basic-info form .form-content #form-phone {
+  grid-area: phone;
+}
+.account-details .container .content .basic-info form .form-content #form-bio {
+  grid-area: bio;
+}
+.account-details .container .content .basic-info form .form-content #form-bio textarea {
+  width: 100%;
+}
+.account-details .container .content .basic-info form .form-content #form-bio span {
+  color: #9397AD;
+}
+.account-details .container .content .basic-info form .form-content .form-button {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  grid-area: buttons;
+}
+.account-details .container .content .address-info {
+  padding-top: 30px;
+}
+.account-details .container .content .address-info form .input-group input {
+  width: 100%;
+}
+.account-details .container .content .address-info form .form-content {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "address1 address1" "address2 address2" "postalcode city" "buttons buttons";
+}
+.account-details .container .content .address-info form .form-content #form-addressline-1 {
+  grid-area: address1;
+}
+.account-details .container .content .address-info form .form-content #form-addressline-2 {
+  grid-area: address2;
+}
+.account-details .container .content .address-info form .form-content #form-addressline-2 span {
+  color: #9397AD;
+}
+.account-details .container .content .address-info form .form-content #form-postalcode {
+  grid-area: postalcode;
+}
+.account-details .container .content .address-info form .form-content #form-city {
+  grid-area: city;
+}
+.account-details .container .content .address-info form .form-content .form-button {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  grid-area: buttons;
 }
 
 .signin {
@@ -2652,4 +2674,98 @@ footer .container .social-media .social-box {
   color: white;
   font-weight: 500;
   width: 100%;
+}
+
+aside {
+  border-right: 1px solid #E2E5F1;
+}
+aside .account-profile {
+  width: 318px;
+  display: flex;
+  justify-content: center;
+}
+aside .account-profile .profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+aside .account-profile .profile .profile-image-container {
+  width: 120px;
+  position: relative;
+}
+aside .account-profile .profile .profile-image-container .profile-image {
+  width: 120px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+aside .account-profile .profile .profile-image-container .profile-image img {
+  width: 100%;
+  height: 100%;
+}
+aside .account-profile .profile .profile-image-container form {
+  border: none;
+  padding: 0;
+  display: block;
+  width: 0;
+  height: 0;
+}
+aside .account-profile .profile .profile-image-container label {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+  border: 1px solid #E2E5F1;
+  cursor: pointer;
+}
+aside .account-profile .profile .profile-image-container label .btn-refresh {
+  border: 1px solid #E2E5F1;
+  color: #33354D;
+  font-size: 12px;
+  cursor: pointer;
+}
+aside .account-profile .profile .profile-image-container label .btn-refresh i {
+  color: black;
+}
+aside .account-profile .profile-info {
+  text-align: center;
+  align-items: center;
+}
+aside .account-profile .profile-info h5 {
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: #0B0F19;
+  font-size: 20px !important;
+  color: #0B0F19;
+}
+aside .account-profile .profile-info p {
+  color: #565973;
+}
+aside .account-profile .buttons-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+aside .account-profile .buttons-container .account-details-button {
+  margin-bottom: 10px;
+  color: #6366F1;
+  background-color: #F3F6FF;
+}
+aside .account-profile .buttons-container .account-details-button:hover {
+  background-color: #6366F1;
+  color: white;
+}
+aside .account-profile .buttons-container .signout-button {
+  color: #6366F1;
+  background-color: #F3F6FF;
+}
+aside .account-profile .buttons-container .signout-button:hover {
+  background-color: #6366F1;
+  color: white;
 }

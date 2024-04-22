@@ -1,0 +1,107 @@
+﻿aside {
+    border-right: 1px solid $gray-300;
+
+    .account-profile {
+        width: 318px;
+        display: flex;
+        justify-content: center;
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .profile-image-container {
+                width: 120px;
+                position: relative;
+
+
+                .profile-image {
+                    width: 120px;
+                    height: auto;
+                    margin-bottom: 10px;
+                    border-radius: 50%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                form {
+                    border: none;
+                    padding: 0;
+                    display: block;
+                    width: 0;
+                    height: 0;
+                }
+
+
+                label {
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    background-color: white;
+                    border-radius: 50%;
+                    padding: 5px;
+                    border: 1px solid $gray-300;
+                    cursor: pointer;
+
+
+                    .btn-refresh {
+                        border: 1px solid $gray-300;
+                        color: $gray-800;
+                        font-size: 12px;
+                        cursor: pointer;
+
+                        i {
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+
+        .profile-info {
+            text-align: center;
+            align-items: center;
+
+            h5 {
+                @include h5;
+                color: $gray-900;
+            }
+
+            p {
+                color: $gray-700;
+            }
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+
+            .account-details-button {
+                margin-bottom: 10px;
+                color: $theme;
+                background-color: $gray-100;
+
+                &:hover {
+                    background-color: $theme;
+                    color: white;
+                }
+            }
+
+            .signout-button {
+                color: $theme;
+                background-color: $gray-100;
+
+                &:hover {
+                    background-color: $theme;
+                    color: white;
+                }
+            }
+        }
+    }
+}

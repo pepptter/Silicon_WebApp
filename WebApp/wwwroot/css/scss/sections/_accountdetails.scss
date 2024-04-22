@@ -4,83 +4,154 @@
         gap: 15px;
         padding: 50px 0;
 
-        aside {
-            width: 250px;
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+
+
 
         .content {
-            flex-grow: 1;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-left: 120px;
 
+            h2 {
+                @include h2;
+                font-weight: 800;
+                color: $gray-900;
+            }
 
+            h5 {
+                @include h5;
+                color: $theme;
+            }
 
-            form {
-                background-color: #fff;
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            label {
+                @include text-m;
+                font-weight: 800;
+                color: $gray-900;
+            }
 
-                h5 {
-                    margin-top: 0;
-                    color: #333;
+            input {
+                padding: 10px 10px 10px 12px;
+                border: 1px solid $gray-400;
+                border-radius: 6px !important;
+                outline: none;
+                @include text-m;
+                color: $gray-700;
+
+                &::placeholder {
+                    color: $gray-500;
                 }
+            }
 
-                .input-group {
-                    display: flex;
-                    flex-direction: column;
-                    margin-bottom: 20px;
+            textarea {
+                padding: 10px 10px 10px 12px;
+                border: 1px solid $gray-400;
+                border-radius: 6px !important;
+                outline: none;
+                color: $gray-700;
+                @include text-m;
 
-                    label {
-                        margin-bottom: 5px;
-                        color: #666;
+                &::placeholder {
+                    color: $gray-500;
+                }
+            }
+
+            width: 100%;
+
+            .basic-info {
+                border-bottom: 1px solid $gray-300;
+                padding-bottom: 30px;
+
+                form {
+                    .form-content {
+                        .input-group {
+                            input {
+                                width: 100%;
+                            }
+                        }
+
+                        display: grid;
+                        grid-column-gap: 22px;
+                        width: 100%;
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-areas: "firstname lastname" "email phone" "bio bio" "buttons buttons";
+
+                        #form-firstname {
+                            grid-area: firstname;
+                        }
+
+                        #form-lastname {
+                            grid-area: lastname;
+                        }
+
+                        #form-email {
+                            grid-area: email;
+                        }
+
+                        #form-phone {
+                            grid-area: phone;
+                        }
+
+                        #form-bio {
+                            grid-area: bio;
+
+                            textarea {
+                                width: 100%;
+                            }
+
+                            span {
+                                color: $gray-600;
+                            }
+                        }
+
+                        .form-button {
+                            margin-top: 20px;
+                            display: flex;
+                            gap: 10px;
+                            grid-area: buttons;
+                        }
                     }
+                }
+            }
 
-                    input,
-                    textarea {
-                        border: 1px solid #ccc;
-                        border-radius: 4px;
-                        padding: 10px;
-                        font-size: 14px;
+            .address-info {
+                padding-top: 30px;
 
-                        &:focus {
-                            border-color: #007bff;
+                form {
+                    .input-group {
+                        input {
+                            width: 100%;
                         }
                     }
 
-                    span {
-                        color: red;
-                        font-size: 12px;
-                    }
-                }
+                    .form-content {
+                        display: grid;
+                        width: 100%;
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-areas: "address1 address1" "address2 address2" "postalcode city" "buttons buttons";
 
-                .form-button {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    margin-top: 20px;
-
-                    .btn {
-                        padding: 10px 20px;
-                        border-radius: 4px;
-                        text-align: center;
-                        cursor: pointer;
-                        font-weight: bold;
-
-                        &-gray {
-                            background-color: #ccc;
-                            color: #333;
+                        #form-addressline-1 {
+                            grid-area: address1;
                         }
 
-                        &-theme {
-                            background-color: #007bff;
-                            color: #fff;
+                        #form-addressline-2 {
+                            grid-area: address2;
+
+                            span {
+                                color: $gray-600;
+                            }
+                        }
+
+                        #form-postalcode {
+                            grid-area: postalcode;
+                        }
+
+                        #form-city {
+                            grid-area: city;
+                        }
+
+                        .form-button {
+                            margin-top: 20px;
+                            display: flex;
+                            gap: 10px;
+                            grid-area: buttons;
                         }
                     }
                 }
@@ -88,63 +159,3 @@
         }
     }
 }
-
-    .account-profile {
-        width: 300px;
-        position: relative;
-
-        .profile-image {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 10px;
-            border-radius: 50%;
-            overflow: hidden;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-
-        .upload-button {
-            form {
-                position: absolute;
-                top: 75px;
-                left: 75px;
-                border: none;
-                padding: 0;
-                display: block;
-                width: 0;
-                height: 0;
-            }
-
-            .btn {
-                background-color: white;
-                border: 1px solid $gray-300;
-                color: $gray-800;
-                font-size: 12px;
-                border-radius: 50%;
-                padding: 7px;
-                cursor: pointer;
-
-                i {
-                    color: black;
-                }
-            }
-        }
-
-
-        .profile-info {
-            h3.displayname {
-                margin: 0;
-                color: #333;
-            }
-
-            p {
-                color: #666;
-                font-size: 14px;
-            }
-        }
-    }
-

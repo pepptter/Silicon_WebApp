@@ -6,19 +6,24 @@
 {
     <section class="account-profile">
         <div class="profile">
-            <div class="profile-image">
-                <img src="~/images/uploads/profiles/@user.ProfilePicture" alt="@user.FirstName @user.LastName" />
+            <div class="profile-image-container">
+                <img class="profile-image"src="~/images/uploads/profiles/@user.ProfilePicture" alt="@user.FirstName @user.LastName" />
+                    <form enctype="multipart/form-data" method="post" asp-action="UploadProfilePicture" asp-controller="Account">
+                        <input id="fileUploader" type="file" name="file" hidden="form.submit()"  />
+                        <label for="fileUploader" class="btn-refresh"><i class="fa-solid fa-arrows-rotate"></i></label>
+                    </form>
             </div>
-            <div class="upload-button">
-                <form enctype="multipart/form-data" method="post" asp-action="UploadProfilePicture" asp-controller="Account">
-                <input id="fileUploader" type="file" name="file" hidden="form.submit()" />
-                <label for="fileUploader" class="btn btn-circle-sm"><i class="fa-solid fa-arrows-rotate"></i></label>
-            </form>
-            </div>
+
             
             <div class="profile-info">
-                <h3 class="displayname">@user.FirstName @user.LastName</h3>
+                <h5>@user.FirstName @user.LastName</h5>
                 <p>@user.Email</p>            
+            </div>
+            <div class="buttons-container">
+                <a class="account-details-button btn-theme" asp-action="Details" asp-controller="Account"><i class="fa-solid fa-gear"></i> Account Details</a>
+                <a class="signout-button btn-theme" asp-action="SignOut" asp-controller="Auth"><i class="fa-solid fa-sign-out"></i> Sign Out</a>
+
+            </div>
         </div>
 
     </section>    

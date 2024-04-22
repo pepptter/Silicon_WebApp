@@ -5,12 +5,14 @@
 
 <section class="signin">
    <div class="container">
-       @if (!string.IsNullOrEmpty(ViewData["StatusMessage"]?.ToString())){
-           <div class="alert alert-danger">
-               @ViewData["StatusMessage"]
-           </div>
-       }
+
        <form method="post" asp-action="SignIn" asp-controller="Auth" asp-route-ReturnUrl="@ViewData["ReturnUrl"]" novalidate>
+            @if (!string.IsNullOrEmpty(ViewData["StatusMessage"]?.ToString()))
+            {
+                <div class="alert alert-danger">
+                    @ViewData["StatusMessage"]
+                </div>
+            }
            <h1>Welcome Back</h1>
            <p>Don't have an account yet? <a asp-action="SignUp" asp-controller="Auth">Sign up here</a></p>
             <div class="form-content">

@@ -24,7 +24,7 @@ public class AccountBasicInfo
 
     public string Email { get; set; } = null!;
 
-    [Display(Name = "Phone number", Prompt = "Enter your phone number (optional)")]
+    [Display(Name = "Phone", Prompt = "Enter your phone number (optional)")]
     public string? PhoneNumber { get; set; }
 
     [Display(Name = "Bio (optional)", Prompt = "Add a short bio...")]

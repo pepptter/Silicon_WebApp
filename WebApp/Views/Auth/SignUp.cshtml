@@ -11,44 +11,44 @@
                 @ViewData["StatusMessage"]
             </div>
         }
-        <form method="post" asp-action="SignUp" asp-controller="Auth" novalidate>
+        <form method="post" asp-action="SignUp" asp-controller="Auth" id="signupForm" novalidate>
             <h1>Create Account</h1>
             <p>Already have an account? <a asp-action="SignIn" asp-controller="Auth">Sign in here</a></p>
             <div class="form-content">
                 <div id="form-firstname" class="input-group">
                     <label asp-for="FirstName"></label>
                     <input asp-for="FirstName" />
-                    <span asp-validation-for="FirstName"></span>
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
                 </div>
                 <div id="form-lastname" class="input-group">
                     <label asp-for="LastName"></label>
                     <input asp-for="LastName" />
-                    <span asp-validation-for="LastName"></span>
+                    <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
                 <div id="form-email" class="input-group">
                     <label asp-for="Email"></label>
                     <input asp-for="Email" />
-                    <span asp-validation-for="Email"></span>                    
+                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div id="form-password" class="input-group">
                     <label asp-for="Password"></label>
                     <input asp-for="Password" />
-                    <span asp-validation-for="Password"></span>
+                    <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
                 <div id="form-confirmpassword" class="input-group">
                     <label asp-for="ConfirmPassword"></label>
                     <input asp-for="ConfirmPassword" />
-                    <span asp-validation-for="ConfirmPassword"></span>
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                 </div>
                 <div id="form-checkbox" >
                     <div class="checkbox-group">
                         <input asp-for="TermsAccepted" id="terms-accepted-checkbox" />
                         <label asp-for="TermsAccepted" for="terms-accepted-checkbox" class="checkbox-label"></label>
                     </div>
-                    <span asp-validation-for="TermsAccepted"></span>
+                    <span asp-validation-for="TermsAccepted" class="text-danger"></span>
                 </div>
                 <div id="form-button">
-                    <button type="submit" class="btn-theme"><i class="fa-regular fa-arrow-left-to-bracket"></i>Sign Up</button>
+                    <button type="submit" class="btn-theme" id="signupButton"><i class="fa-regular fa-arrow-left-to-bracket"></i>Sign Up</button>
                 </div>
             </div>
 

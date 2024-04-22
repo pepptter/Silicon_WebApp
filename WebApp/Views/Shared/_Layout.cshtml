@@ -25,7 +25,15 @@
                 <div class="menu">
                     <nav>
                         <a href="@Url.Action("Index", "Default")#showcase" class="menu-link">Overview</a>
-                        <a href="@Url.Action("Index", "Default")#features" class="menu-link">Features</a>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <a href="@Url.Action("Index", "Courses")" class="menu-link">Courses</a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Index", "Default")#features" class="menu-link">Features</a>
+                        }
+
                         <a class="menu-link" asp-controller="Contact" asp-action="Index">Contact</a>
                     </nav>
                 </div>
